@@ -1,0 +1,11 @@
+{
+  "_comment": "Template settings.json projet. Les hooks standard (lint, typecheck, block-no-verify, git-diagnostic) sont deja cables GLOBALEMENT par le kit dans ~/.claude/settings.json : ne pas les redeclarer ici. Ce fichier sert aux permissions et hooks SPECIFIQUES au projet.",
+  "permissions": {
+    "allow": [
+      "Bash(pnpm dev*)",
+      "Bash(pnpm test*)",
+      "Bash(pnpm build*)"
+    ],
+    "deny": []
+  }
+}
