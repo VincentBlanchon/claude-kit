@@ -59,6 +59,18 @@ Auth, paiement, données sensibles, migration structurante, ou plus de 5 fichier
 - **Audit sécurité** avant merge : inputs validés, auth vérifiée sur chaque route, pas de secret en clair, pas de données sensibles loguées (l'agent `security-auditor` du kit fait exactement ça).
 - **Attention au biais d'approbation** : un agent relecteur a tendance à valider poliment. Le prompt qui marche : « liste chaque problème trouvé avec ton niveau de confiance », plutôt que « dis-moi si c'est bon ». On filtre ensuite, mais rien n'est tu.
 
+## Le pilotage en session : les 5 règles anti-déraillement
+
+Une analyse forensique de 69 sessions réelles a mesuré pourquoi les sessions partent en vrille. Cinq causes reviennent, cinq parades à exiger de l'agent (et à s'appliquer à soi-même) :
+
+1. **Le chemin critique est verrouillé.** Dès qu'une deadline ou une priorité est nommée, il n'y a plus qu'une priorité. Les optimisations et pistes annexes se NOTENT pour après, elles ne se proposent pas avant. Si c'est TOI qui dévies en cours de route, un bon agent doit te le signaler, pas te suivre en silence.
+2. **Vérifier avant de supposer.** Tout ce qui se vérifie en 2 minutes (une requête, un grep, un diff) se vérifie AVANT d'être affirmé. Et dès qu'une tâche touche des données réelles : état des lieux chiffré + « peut-on perdre quelque chose ? » + sauvegarde, avant tout changement.
+3. **Une seule tâche lourde à la fois.** Lancer trois recherches et deux builds en parallèle produit du chaos, pas de la vitesse. Séquentiel par défaut ; le parallèle se propose avec une estimation, il ne s'improvise pas.
+4. **Une phase par conversation.** Concevoir OU coder OU déboguer. Une idée d'une autre phase émerge ? Elle se note en une ligne, elle ne s'exécute pas.
+5. **Le scope s'annonce avant de produire.** Sur toute tâche ouverte (audit, recherche, refonte) : « je vise N points, l'essentiel d'abord, le détail si tu valides ». Cinquante pages quand cinq suffisent à décider, c'est du bruit, pas du travail.
+
+Et le mode incident : quand quelque chose sent le roussi (données, prod), la bonne réponse est un état des lieux ultra-court, trois faits vérifiés, un risque, une prochaine action. Pas un pavé rassurant.
+
 ## Les petites tâches
 
 Typo, renommage, correction d'une ligne : pas de rituel, juste la demande et la vérification. Le workflow complet est un outil, pas une liturgie. Le bon critère : est-ce que je saurais annuler ce changement facilement si c'est raté ? Si oui, va vite. Si non, plan.
