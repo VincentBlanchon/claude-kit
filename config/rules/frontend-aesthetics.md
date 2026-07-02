@@ -1,3 +1,7 @@
+---
+paths: ["**/*.tsx", "**/*.jsx", "**/*.css", "**/*.vue", "**/*.svelte", "**/*.html"]
+---
+
 ## Esthetique frontend (anti-slop)
 
 Regle transverse a tout front (web et mobile). Principe de fond (source : guide officiel Anthropic "Frontend Aesthetics, A Prompting Guide") : le beau se joue dans la METHODE, pas dans l'outil. Par defaut une IA converge vers le generique ("AI slop"), il faut la DIRIGER.

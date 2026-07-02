@@ -1,7 +1,7 @@
 ---
 name: roadmap-builder
 description: "Aide a construire la roadmap d'un projet par phases et sprints. Use at project launch."
-model: opus
+model: sonnet
 tools:
   - Read
   - Glob

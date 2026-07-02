@@ -1,7 +1,7 @@
 ---
 name: reviewer
 description: "Critique design et UX. Evalue la qualite visuelle et l'experience utilisateur. Use when working on UI components or pages."
-model: opus
+model: sonnet
 tools:
   - Read
   - Glob

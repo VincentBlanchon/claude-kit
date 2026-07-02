@@ -31,7 +31,9 @@ Ces règles s'appliquent à tous les projets. Le CLAUDE.md de chaque projet ajou
 
 ## Garde-fous
 
-- **Règle des 3 tentatives** : après 3 corrections ratées du même problème, stop. Exposer ce qu'on sait, remettre en cause l'approche.
+- **Preuve avant affirmation** : avant tout « c'est fait », identifier LA commande qui le prouve, l'exécuter fraîche, lire toute la sortie. Le rapport d'un agent n'est pas une preuve : c'est son diff qu'on vérifie.
+- **Discipline de contexte** : vers ~40% de contexte utilisé, la qualité chute. Aucune tâche lourde ne démarre au-delà : clôturer et repartir en session fraîche avec un résumé. Au 2e fix raté d'un même problème, session fraîche plutôt qu'insister.
+- **Règle des 3 tentatives** : après 3 corrections ratées du même problème, stop. Exposer ce qu'on sait, remettre en cause l'approche (c'est l'architecture qu'on questionne, pas un 4e patch).
 - **Échouer bruyamment** : ne jamais masquer un échec partiel ni un cas ignoré.
 - **Processus** : jamais de kill par pattern (`killall`, `pkill`). Identifier le PID (`lsof -i :port`), confirmer, puis kill ciblé. Séparer l'identification de l'exécution.
 - **Fraîcheur** : avant de présenter une donnée externe (lien, prix, offre), vérifier qu'elle est vivante et datée.

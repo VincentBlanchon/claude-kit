@@ -1,7 +1,7 @@
 ---
 name: stack-advisor
 description: "Conseiller stack technique. Recherche et recommande la meilleure stack pour un nouveau projet. Use at project launch."
-model: opus
+model: sonnet
 tools:
   - Read
   - Glob

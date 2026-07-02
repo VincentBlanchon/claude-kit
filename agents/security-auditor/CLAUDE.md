@@ -1,6 +1,7 @@
 ---
 name: security-auditor
 description: "Audit de securite complet avant les PRs. Detecte les failles OWASP, inputs non valides, secrets exposes, permissions manquantes. Use before merging PRs."
+memory: project
 model: opus
 tools:
   - Read

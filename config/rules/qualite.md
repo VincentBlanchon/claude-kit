@@ -1,3 +1,7 @@
+---
+paths: ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "**/*.mjs", "**/*.vue", "**/*.svelte", "**/*.css", "**/*.py"]
+---
+
 ## Standards qualite universels
 
 - Zero warning en lint. Zero erreur de type.

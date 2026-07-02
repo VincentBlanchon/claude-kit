@@ -9,3 +9,5 @@
 - Apres une retouche visuelle, la preuve se refait. Une verification d'avant-retouche ne prouve rien.
 - Vocabulaire interdit en cloture de tache : « ca devrait marcher », « normalement c'est bon ». Soit la preuve existe, soit la tache est encore en cours.
 - Rapporter fidelement : si un test echoue, le dire avec la sortie ; si une etape a saute, le dire.
+- Rapport d'agent ≠ preuve : un subagent qui dit « termine » se verifie par SON DIFF (git diff), jamais par son rapport. Idem workflows et taches background.
+- La preuve s'execute FRAICHE : un resultat d'il y a 20 minutes ne prouve rien sur le code d'apres.

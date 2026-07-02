@@ -9,6 +9,8 @@ Le contexte d'un agent est sa mémoire de travail : tout ce qui a été dit, lu 
 
 Symptômes : réponses plus vagues, oublis de règles pourtant écrites, retours en arrière inexpliqués, vitesse en berne. Quand tu les vois, le problème n'est pas le modèle, c'est la session.
 
+**La règle opérationnelle chiffrée** (recoupée par les power users et la doc officielle) : vers **40 % de contexte utilisé**, tu entres en zone rouge. Aucune tâche lourde ne DÉMARRE au-delà de ce seuil : on clôture proprement et on repart frais. La statusline de Claude Code affiche ce pourcentage : regarde-le comme une jauge d'essence.
+
 ## Les 4 gestes de gestion de session
 
 **1. `/clear` : nouvelle tâche, nouvelle session.** Le geste par défaut. Une session = une tâche. Repartir propre coûte 30 secondes de re-cadrage et rend des heures de lucidité.
