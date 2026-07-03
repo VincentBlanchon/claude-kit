@@ -21,6 +21,10 @@
           {
             "type": "command",
             "command": "bash $HOME/.claude/hooks/git-diagnostic.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash $HOME/.claude/hooks/rappels.sh"
           }
         ]
       }
