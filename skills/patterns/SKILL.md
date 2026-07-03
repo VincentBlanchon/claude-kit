@@ -9,6 +9,12 @@ description: Bibliothèque de patterns / décisions / conventions RÉUTILISABLES
 
 **La solution :** `~/.claude/patterns/*.md` — un fichier court par thème (stack, conventions de code, déploiement, pièges récurrents, préférences UI…). Pour le multi-machine, versionner ce dossier dans un repo git perso et le réinstaller sur chaque machine.
 
+## CANDIDATS — l'apprentissage continu
+
+Un hook Stop léger (`suggest-patterns.sh`, installé par le kit : Haiku asynchrone, 1 analyse max par session de 10+ messages, ne bloque jamais la fin de tour) détecte les corrections/préférences RÉUTILISABLES exprimées par l'utilisateur en session et les APPEND dans `~/.claude/patterns/_candidats.md` (date, projet, verbatim, confiance). **Rien ne devient un pattern actif sans validation.**
+
+À chaque LOAD de ce skill : si `_candidats.md` est non vide, présenter les candidats à l'utilisateur (les [haute] d'abord), et pour chacun : **PROMOUVOIR** (reformuler court, écrire dans le bon `<theme>.md`) ou **JETER**. Dans les deux cas, retirer la ligne traitée de `_candidats.md`. Si le fichier dépasse ~30 lignes sans review, proposer une passe de tri immédiate. Le schéma complet : [playbook/schemas.md](../../playbook/schemas.md), schémas 4 et 5.
+
 ## LOAD — quand lire le store
 - Au **démarrage d'un nouveau projet** : lire `~/.claude/patterns/` et proposer ce qui s'applique (« d'habitude tu fais X — on garde ? »).
 - Quand l'utilisateur dit « **mes patterns / mes habitudes / comme d'hab / mes conventions** ».
