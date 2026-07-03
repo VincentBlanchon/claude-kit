@@ -28,7 +28,11 @@ Pour tout ce qui touche plus d'un ou deux fichiers : un plan écrit, découpé e
 3. Bouton de changement de statut dans la fiche → vérif : visible et fonctionnel dans le navigateur
 ```
 
-Un plan sans critères de vérification n'est pas un plan, c'est une intention. Astuce d'exigence : demander à l'agent « qu'est-ce qui pourrait rendre ce plan faux ? » avant de valider. Sur un sujet lourd (architecture, migration), faire challenger le plan par un deuxième agent en lecture seule est un excellent investissement.
+Un plan sans critères de vérification n'est pas un plan, c'est une intention.
+
+**Découpe en tranches VERTICALES, pas en couches techniques.** Une tranche traverse tout (un petit bout d'écran + son API + sa donnée) et se démontre dans le navigateur ; une couche (« d'abord toute la base, puis toute l'API… ») ne montre rien avant la fin. Avec des tranches, chaque étape du plan est constatable de tes yeux, et tu peux t'arrêter à n'importe laquelle avec un produit qui marche.
+
+**Si la demande vient d'une vraie réflexion produit** (chapitre 01, skill take-your-time) : elle arrive sous forme de SPEC courte validée (besoin, scope, hors-scope, critères). Charge la SPEC dans une session FRAÎCHE et construis depuis elle : la session de réflexion est polluée par l'exploration, elle ne construit jamais. Astuce d'exigence : demander à l'agent « qu'est-ce qui pourrait rendre ce plan faux ? » avant de valider. Sur un sujet lourd (architecture, migration), faire challenger le plan par un deuxième agent en lecture seule est un excellent investissement.
 
 ## Étape 3 : verrouiller
 

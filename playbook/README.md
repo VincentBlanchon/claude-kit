@@ -16,6 +16,22 @@ La méthode complète pour travailler avec des agents IA, en 10 chapitres courts
 | 10 | [Modèles et coûts](10-modeles-et-couts.md) | Choisir le bon modèle et le bon effort, tenir un budget tokens |
 | ★ | [Sous le capot : les schémas](schemas.md) | Les 9 schémas mermaid qui montrent précisément ce qui se passe : chargement, blocages, gates, hooks, apprentissage |
 
+## Les 3 pipelines (la carte mentale)
+
+Tout le travail avec un agent passe par trois pipelines, avec des passages de témoin nets :
+
+```mermaid
+flowchart LR
+    P1["1. RÉFLEXION<br/>qu'est-ce qu'on a déjà,<br/>qu'est-ce qu'on veut<br/>(ch. 01, take-your-time)"]
+    P2["2. CRÉATION<br/>plan en tranches démontrables,<br/>reviews, tests, preuve<br/>(ch. 03-04)"]
+    P3["3. DESIGN<br/>plan UI/UX, maquette,<br/>puis code + motion<br/>(ch. 09, designsense)"]
+    P1 -- "SPEC courte validée<br/>+ SESSION FRAÎCHE" --> P2
+    P1 -. "la feature a une UI" .-> P3
+    P3 -- "écrans validés,<br/>composants promus" --> P2
+```
+
+Les deux règles de frontière qui changent tout : la **réflexion ne code jamais** (elle produit une SPEC courte : besoin, scope, hors-scope, critères ; la construction démarre dans une session NEUVE qui charge la SPEC et rien d'autre, donc zéro contexte pollué) ; et le **design ne se mélange jamais à la création** dans une même conversation (le design livre des écrans validés, la création les branche).
+
 ## D'où ça vient
 
 Ces chapitres distillent trois sources : la documentation et les guides officiels Anthropic, une veille continue sur les retours d'expérience publics (praticiens, équipes en production), et la pratique réelle sur une quinzaine de projets (produits web, pipelines de données, automatisations, apps mobiles). Quand un chiffre est cité, il vient d'une source publique documentée ; quand une règle est affirmée, elle a été éprouvée en conditions réelles.
