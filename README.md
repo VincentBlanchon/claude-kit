@@ -25,11 +25,11 @@ L'installation est **non-destructive** : elle n'écrase jamais un fichier exista
 
 | Dossier | Contenu | Installé vers |
 |---|---|---|
-| [playbook/](playbook/README.md) | La méthode en 10 chapitres : piloter un agent, CLAUDE.md, workflow, vérification, contexte, hooks, git, design, coûts | (lecture, pas installé) |
+| [playbook/](playbook/README.md) | La méthode en 10 chapitres + [9 schémas mermaid](playbook/schemas.md) qui montrent précisément ce qui se passe sous le capot | (lecture, pas installé) |
 | [config/](config/) | `CLAUDE.md` global de départ, `settings.json` de base (secrets bloqués), 5 règles toujours chargées | `~/.claude/` |
 | [skills/](skills/) | `demarrer-projet` (initialisation guidée), `designsense` (692 règles UI/UX anti-générique), `take-your-time` (réflexion produit avant le code), `patterns` (conventions inter-projets) | `~/.claude/skills/` |
 | [agents/](agents/) | 6 sous-agents spécialisés en lecture seule : architecte, QA, reviewer design, auditeur sécurité, conseiller stack, roadmap | `~/.claude/agents/` |
-| [hooks/](hooks/) | 4 scripts d'enforcement automatique : diagnostic git à l'ouverture, lint/format après édition, blocage de `--no-verify`, typecheck à l'arrêt | `~/.claude/hooks/` |
+| [hooks/](hooks/) | 8 scripts d'enforcement : diagnostic git à l'ouverture (retard, branches fantômes, worktrees oubliés), lint/format après édition, blocage `--no-verify` et commandes destructives, typecheck à l'arrêt, directive de compaction, alerte anti-slop front, apprentissage continu | `~/.claude/hooks/` |
 | [templates/](templates/) | `CLAUDE.md` projet, `settings.json` projet, template d'agent | (copiés par `demarrer-projet`) |
 
 ## La philosophie en 5 points

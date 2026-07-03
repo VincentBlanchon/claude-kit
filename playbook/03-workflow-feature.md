@@ -65,7 +65,7 @@ Une analyse forensique de 69 sessions réelles a mesuré pourquoi les sessions p
 
 1. **Le chemin critique est verrouillé.** Dès qu'une deadline ou une priorité est nommée, il n'y a plus qu'une priorité. Les optimisations et pistes annexes se NOTENT pour après, elles ne se proposent pas avant. Si c'est TOI qui dévies en cours de route, un bon agent doit te le signaler, pas te suivre en silence.
 2. **Vérifier avant de supposer.** Tout ce qui se vérifie en 2 minutes (une requête, un grep, un diff) se vérifie AVANT d'être affirmé. Et dès qu'une tâche touche des données réelles : état des lieux chiffré + « peut-on perdre quelque chose ? » + sauvegarde, avant tout changement.
-3. **Une seule tâche lourde à la fois.** Lancer trois recherches et deux builds en parallèle produit du chaos, pas de la vitesse. Séquentiel par défaut ; le parallèle se propose avec une estimation, il ne s'improvise pas.
+3. **Une seule tâche lourde à la fois.** Lancer trois recherches et deux builds en parallèle produit du chaos, pas de la vitesse. Séquentiel par défaut ; le parallèle se propose avec une estimation, il ne s'improvise pas. Cas particulier des ingestions massives (plus de ~100 fichiers, vidéos, pages) : chiffrer AVANT (volume, mémoire, durée) et découper en lots — une tâche qui fait ramer la machine est un incident, pas du travail.
 4. **Une phase par conversation.** Concevoir OU coder OU déboguer. Une idée d'une autre phase émerge ? Elle se note en une ligne, elle ne s'exécute pas.
 5. **Le scope s'annonce avant de produire.** Sur toute tâche ouverte (audit, recherche, refonte) : « je vise N points, l'essentiel d'abord, le détail si tu valides ». Cinquante pages quand cinq suffisent à décider, c'est du bruit, pas du travail.
 

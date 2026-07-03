@@ -71,6 +71,10 @@
           {
             "type": "command",
             "command": "bash $HOME/.claude/hooks/typecheck-on-stop.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash $HOME/.claude/hooks/suggest-patterns.sh"
           }
         ]
       }

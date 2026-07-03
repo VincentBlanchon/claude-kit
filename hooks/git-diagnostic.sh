@@ -41,6 +41,22 @@ if git show-ref --verify --quiet "refs/heads/${default_branch}"; then
   fi
 fi
 
+# Worktrees avec travail non commite (invisible depuis le checkout principal).
+wt_dirty=0
+main_wt=$(git rev-parse --show-toplevel 2>/dev/null)
+while IFS= read -r wt; do
+  [ -z "$wt" ] || [ "$wt" = "$main_wt" ] && continue
+  [ -d "$wt" ] || continue
+  if [ -n "$(git -C "$wt" status --porcelain 2>/dev/null | head -1)" ]; then
+    wt_dirty=$((wt_dirty+1))
+  fi
+done <<EOF
+$(git worktree list --porcelain 2>/dev/null | awk '/^worktree /{print $2}')
+EOF
+if [ "${wt_dirty:-0}" -gt 0 ]; then
+  alerts="${alerts}[git-diagnostic] ${wt_dirty} worktree(s) avec travail NON COMMITE, invisible depuis ici : git worktree list, puis committer ou jeter.\n"
+fi
+
 if [ -n "$alerts" ]; then
   printf "%b" "$alerts"
 fi

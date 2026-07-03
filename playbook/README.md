@@ -14,6 +14,7 @@ La méthode complète pour travailler avec des agents IA, en 10 chapitres courts
 | 08 | [La discipline git](08-git-discipline.md) | Branches, PR courtes, et l'hygiène qui évite les états fantômes |
 | 09 | [Du front sans slop](09-front-sans-slop.md) | La méthode pour des interfaces qui ne sentent pas l'IA |
 | 10 | [Modèles et coûts](10-modeles-et-couts.md) | Choisir le bon modèle et le bon effort, tenir un budget tokens |
+| ★ | [Sous le capot : les schémas](schemas.md) | Les 9 schémas mermaid qui montrent précisément ce qui se passe : chargement, blocages, gates, hooks, apprentissage |
 
 ## D'où ça vient
 
