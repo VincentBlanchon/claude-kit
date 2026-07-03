@@ -82,6 +82,12 @@ say "5. Hooks"
 copy_tree "$KIT_DIR/hooks" "$DEST/hooks"
 $DRY_RUN || chmod +x "$DEST/hooks/"*.sh 2>/dev/null || true
 
+# Marqueur pour le rappel "config en retard sur le repo" (hooks/rappels.sh)
+if [ "$DRY_RUN" = false ]; then
+  mkdir -p "$DEST/.rappels"
+  { echo "$KIT_DIR"; git -C "$KIT_DIR" rev-parse main 2>/dev/null || echo "?"; date +%Y-%m-%d; } > "$DEST/.rappels/preset-install.txt"
+fi
+
 say "Resultat : $installed installe(s), $skipped ignore(s), $forced ecrase(s)."
 
 if [ "$skipped" -gt 0 ]; then
