@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 620" font-family="'DM Sans', system-ui, -apple-system, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9" fill="none" stroke="#b85436" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="920" height="620" fill="#f2ead8"/>
+
+  <!-- header -->
+  <text x="40" y="46" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="13" letter-spacing="2" fill="#b85436">CLAUDE-KIT · LE PIPELINE DE MODÈLES</text>
+  <text x="40" y="70" font-size="14.5" fill="#857461">Le bon modèle pour la bonne tâche, et quoi faire monter quand ça rate.</text>
+
+  <!-- PANEL 1 : LES 3 GAMMES -->
+  <rect x="28" y="92" width="864" height="230" rx="10" fill="none" stroke="#d7c9a8" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <text x="44" y="114" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="10.5" letter-spacing="1" fill="#857461">LES 3 GAMMES · PUISSANCE ET COÛT CROISSANTS →</text>
+
+  <!-- power scale bars, increasing left to right -->
+  <g>
+    <rect x="76" y="150" width="14" height="18" rx="2" fill="#b85436" opacity="0.85"/>
+    <rect x="380" y="138" width="14" height="30" rx="2" fill="#b85436" opacity="0.85"/>
+    <rect x="384" y="150" width="14" height="18" rx="2" fill="#b85436" opacity="0.55"/>
+    <rect x="684" y="126" width="14" height="42" rx="2" fill="#3f5a2a"/>
+    <rect x="688" y="138" width="14" height="30" rx="2" fill="#3f5a2a" opacity="0.7"/>
+    <rect x="692" y="150" width="14" height="18" rx="2" fill="#3f5a2a" opacity="0.45"/>
+  </g>
+
+  <!-- card 1 : mécanique -->
+  <g>
+    <rect x="44" y="176" width="268" height="126" rx="8" fill="#f7f1e3" stroke="#d7c9a8" stroke-width="1.3"/>
+    <text x="62" y="202" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="9.5" letter-spacing="1" fill="#b85436">MÉCANIQUE · BORNÉ</text>
+    <text x="62" y="225" font-size="16" font-weight="700" fill="#1a1812">Modèle léger · effort bas</text>
+    <text x="62" y="248" font-size="12.5" fill="#857461">Renommer, extraire, script jetable.</text>
+    <text x="62" y="265" font-size="12.5" fill="#857461">Tâche cadrée sans jugement : le petit</text>
+    <text x="62" y="282" font-size="12.5" fill="#857461">modèle suffit, rapide et bon marché.</text>
+  </g>
+  <!-- card 2 : quotidien -->
+  <g>
+    <rect x="326" y="176" width="268" height="126" rx="8" fill="#f7f1e3" stroke="#d7c9a8" stroke-width="1.3"/>
+    <text x="344" y="202" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="9.5" letter-spacing="1" fill="#b85436">QUOTIDIEN</text>
+    <text x="344" y="225" font-size="16" font-weight="700" fill="#1a1812">Modèle équilibré · effort haut</text>
+    <text x="344" y="248" font-size="12.5" fill="#857461">Feature cadrée, tests, refactor</text>
+    <text x="344" y="265" font-size="12.5" fill="#857461">planifié. Le travail courant mérite</text>
+    <text x="344" y="282" font-size="12.5" fill="#857461">un modèle solide et de la rigueur.</text>
+  </g>
+  <!-- card 3 : jugement (emphase olive) -->
+  <g>
+    <rect x="608" y="176" width="268" height="126" rx="8" fill="#f7f1e3" stroke="#3f5a2a" stroke-width="1.6"/>
+    <text x="626" y="202" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="9.5" letter-spacing="1" fill="#3f5a2a">JUGEMENT</text>
+    <text x="626" y="225" font-size="16" font-weight="700" fill="#1a1812">Gros modèle · effort haut-max</text>
+    <text x="626" y="248" font-size="12.5" fill="#857461">Architecture, debug retors, sécurité,</text>
+    <text x="626" y="265" font-size="12.5" fill="#857461">review critique. On ne sort le gros</text>
+    <text x="626" y="282" font-size="12.5" fill="#857461">modèle que là où ça compte vraiment.</text>
+  </g>
+
+  <!-- PANEL 2 : QUAND UN RÉSULTAT RATE -->
+  <rect x="28" y="336" width="864" height="212" rx="10" fill="none" stroke="#d7c9a8" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <text x="44" y="358" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="10.5" letter-spacing="1" fill="#857461">QUAND UN RÉSULTAT RATE · DEUX CURSEURS ORTHOGONAUX</text>
+
+  <!-- perpendicular axes -->
+  <g>
+    <!-- vertical axis : MODÈLE -->
+    <line x1="120" y1="520" x2="120" y2="392" stroke="#b85436" stroke-width="1.6" marker-end="url(#arrow)"/>
+    <text x="112" y="388" text-anchor="end" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="10" fill="#b85436" transform="rotate(-90 112 388)">+ MODÈLE</text>
+    <!-- horizontal axis : EFFORT -->
+    <line x1="120" y1="520" x2="248" y2="520" stroke="#b85436" stroke-width="1.6" marker-end="url(#arrow)"/>
+    <text x="252" y="524" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="10" fill="#b85436">+ EFFORT</text>
+  </g>
+
+  <!-- card A : pas su -->
+  <g>
+    <rect x="316" y="378" width="270" height="70" rx="8" fill="#f7f1e3" stroke="#d7c9a8" stroke-width="1.3"/>
+    <text x="334" y="402" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="9.5" letter-spacing="1" fill="#b85436">« PAS SU » · ÉCHEC DE CAPACITÉ</text>
+    <text x="334" y="424" font-size="14.5" font-weight="700" fill="#1a1812">Monte le MODÈLE</text>
+    <text x="334" y="440" font-size="11.5" fill="#857461">Le problème dépassait le petit modèle.</text>
+  </g>
+  <!-- card B : pas essayé -->
+  <g>
+    <rect x="606" y="378" width="270" height="70" rx="8" fill="#f7f1e3" stroke="#d7c9a8" stroke-width="1.3"/>
+    <text x="624" y="402" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="9.5" letter-spacing="1" fill="#b85436">« PAS ESSAYÉ » · BÂCLÉ</text>
+    <text x="624" y="424" font-size="14.5" font-weight="700" fill="#1a1812">Monte l'EFFORT</text>
+    <text x="624" y="440" font-size="11.5" fill="#857461">Un cran de rigueur, pas plus de modèle.</text>
+  </g>
+
+  <!-- morale -->
+  <text x="316" y="500" font-size="13" fill="#1a1812">Deux axes séparés : ne dégaine pas le <tspan font-weight="700">gros modèle</tspan> quand un cran d'<tspan font-weight="700">effort</tspan> suffit.</text>
+  <text x="316" y="522" font-size="11.5" fill="#857461">Diagnostiquer d'abord la nature de l'échec, avant de monter le curseur.</text>
+
+  <!-- bottom band -->
+  <rect x="28" y="562" width="864" height="42" rx="8" fill="#f7f1e3" stroke="#3f5a2a" stroke-width="1.6"/>
+  <text x="460" y="588" text-anchor="middle" font-size="13" fill="#1a1812">Le <tspan font-weight="700">gros modèle orchestre</tspan> ; il délègue le borné et le navigateur à des exécuteurs légers et rapides.</text>
+</svg>

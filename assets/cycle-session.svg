@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 600" font-family="'DM Sans', system-ui, -apple-system, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9" fill="none" stroke="#b85436" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="920" height="600" fill="#f2ead8"/>
+
+  <!-- header -->
+  <text x="40" y="46" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="13" letter-spacing="2" fill="#b85436">CLAUDE-KIT · LE CYCLE D'UNE SESSION</text>
+  <text x="40" y="70" font-size="14.5" fill="#857461">Quatre temps qui bouclent : ouvrir sur une base à jour, travailler, surveiller, clôturer proprement.</text>
+
+  <!-- 1. OUVERTURE -->
+  <g>
+    <rect x="44" y="110" width="384" height="126" rx="8" fill="#f7f1e3" stroke="#3f5a2a" stroke-width="1.6"/>
+    <text x="66" y="138" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="9.5" letter-spacing="1" fill="#3f5a2a">1 · OUVERTURE</text>
+    <text x="66" y="162" font-size="17" font-weight="700" fill="#1a1812">Les hooks de démarrage s'allument</text>
+    <text x="66" y="187" font-size="12.5" fill="#857461">Diagnostic git, garde-fou de branche, rappels,</text>
+    <text x="66" y="204" font-size="12.5" fill="#857461">statusline active. Tu reprends où tu en étais,</text>
+    <text x="66" y="221" font-size="12.5" fill="#857461">sur une base à jour.</text>
+  </g>
+
+  <!-- arrow 1 -> 2 -->
+  <line x1="431" y1="173" x2="489" y2="173" stroke="#b85436" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <!-- 2. TRAVAIL -->
+  <g>
+    <rect x="492" y="110" width="384" height="126" rx="8" fill="#f7f1e3" stroke="#d7c9a8" stroke-width="1.3"/>
+    <text x="514" y="138" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="9.5" letter-spacing="1" fill="#b85436">2 · TRAVAIL</text>
+    <text x="514" y="162" font-size="17" font-weight="700" fill="#1a1812">Une seule phase à la fois</text>
+    <text x="514" y="187" font-size="12.5" fill="#857461">Concevoir OU coder OU debugger. Le plan est</text>
+    <text x="514" y="204" font-size="12.5" fill="#857461">verrouillé AVANT de construire. Puis la preuve :</text>
+    <text x="514" y="221" font-size="12.5" fill="#857461">un test qui passe et un vrai navigateur.</text>
+  </g>
+
+  <!-- arrow 2 -> 3 (down) -->
+  <line x1="684" y1="239" x2="684" y2="297" stroke="#b85436" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <!-- 3. SURVEILLANCE -->
+  <g>
+    <rect x="492" y="300" width="384" height="126" rx="8" fill="#f7f1e3" stroke="#d7c9a8" stroke-width="1.3"/>
+    <text x="514" y="328" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="9.5" letter-spacing="1" fill="#b85436">3 · SURVEILLANCE</text>
+    <text x="514" y="352" font-size="17" font-weight="700" fill="#1a1812">La jauge de contexte</text>
+    <text x="514" y="377" font-size="12.5" fill="#857461">Elle se remplit à mesure que la session avance.</text>
+    <text x="514" y="394" font-size="12.5" fill="#857461">En zone rouge, on ne démarre pas de tâche</text>
+    <text x="514" y="411" font-size="12.5" fill="#857461">lourde : la qualité chute.</text>
+  </g>
+
+  <!-- arrow 3 -> 4 (left) -->
+  <line x1="489" y1="363" x2="431" y2="363" stroke="#b85436" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <!-- 4. CLOTURE -->
+  <g>
+    <rect x="44" y="300" width="384" height="126" rx="8" fill="#f7f1e3" stroke="#d7c9a8" stroke-width="1.3"/>
+    <text x="66" y="328" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="9.5" letter-spacing="1" fill="#b85436">4 · CLÔTURE</text>
+    <text x="66" y="352" font-size="17" font-weight="700" fill="#1a1812">/close-branch, puis session fraîche</text>
+    <text x="66" y="377" font-size="12.5" fill="#857461">Vérifier mergé, commit + push, supprimer branche</text>
+    <text x="66" y="394" font-size="12.5" fill="#857461">et worktree, retour sur main. On repart net,</text>
+    <text x="66" y="411" font-size="12.5" fill="#857461">avec un résumé de ce qu'on a appris.</text>
+  </g>
+
+  <!-- return arrow: cloture -> ouverture (the loop) -->
+  <path d="M236,300 L236,268 L236,236" fill="none" stroke="#b85436" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="252" y="272" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="10" fill="#b85436">le cycle recommence</text>
+
+  <!-- legend -->
+  <text x="460" y="486" text-anchor="middle" font-size="13" fill="#1a1812">Chaque session <tspan font-weight="700">boucle</tspan> : on ouvre à jour, on travaille par preuve, on surveille le contexte, on clôture propre.</text>
+</svg>

@@ -6,7 +6,21 @@ Une carte d'ensemble d'abord, puis neuf schémas qui montrent PRÉCISÉMENT ce q
 
 ![Carte du système : du repo à la config active, et les six briques qui la composent](../assets/carte-systeme.svg)
 
-Le repo s'installe dans `~/.claude` via `./install.sh`, qui déploie six briques chargées à chaque session. Les hooks empêchent (automatique, déterministe), le CLAUDE.md guide (règles à suivre). Les neuf schémas ci-dessous détaillent chaque moment.
+Le repo s'installe dans `~/.claude` via `./install.sh`, qui déploie six briques chargées à chaque session. Les hooks empêchent (automatique, déterministe), le CLAUDE.md guide (règles à suivre).
+
+### Le cycle d'une session
+
+![Le cycle d'une session : ouverture, travail, surveillance, clôture, puis session fraîche](../assets/cycle-session.svg)
+
+De l'ouverture (les hooks de démarrage et la jauge de contexte) à la clôture propre (`/close-branch`), puis on repart frais. Une phase à la fois, un plan verrouillé avant de construire, une preuve avant de dire que c'est fait.
+
+### Le pipeline de modèles
+
+![Le pipeline de modèles : trois gammes selon la charge, et deux curseurs quand un résultat rate](../assets/pipeline-modeles.svg)
+
+Trois gammes selon la charge (léger pour le borné, équilibré au quotidien, gros pour le jugement), et le réflexe quand un résultat rate : "pas su" fait monter le modèle, "pas essayé" fait monter l'effort.
+
+Les neuf schémas ci-dessous détaillent ensuite chaque moment précis.
 
 ## 1. Ce qui se charge à l'ouverture d'une session
 
