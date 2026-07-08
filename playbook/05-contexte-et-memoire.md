@@ -11,6 +11,16 @@ Symptômes : réponses plus vagues, oublis de règles pourtant écrites, retours
 
 **La règle opérationnelle chiffrée** (recoupée par les power users et la doc officielle) : vers **40 % de contexte utilisé**, tu entres en zone rouge. Aucune tâche lourde ne DÉMARRE au-delà de ce seuil : on clôture proprement et on repart frais. La statusline de Claude Code affiche ce pourcentage : regarde-le comme une jauge d'essence.
 
+## Le pourcentage se lit, il ne s'invente pas
+
+Un piège discret mais coûteux : l'agent a tendance à estimer son remplissage « au jugé ». Il annonce « on est à 40 % » sans l'avoir mesuré. Il se trompe presque toujours. Deux dégâts opposés : soit il sur-estime et te fait couper une session encore fraîche, soit il sous-estime et laisse la session pourrir bien après la zone rouge.
+
+La règle : **ne jamais annoncer un pourcentage de contexte qu'on n'a pas lu sur la jauge.** La vraie jauge, c'est la statusline. Elle est alimentée par la donnée réelle que fournit Claude Code (`context_window.used_percentage`), affichée en continu par un hook (`statusline.sh` dans ce kit). C'est le seul chiffre fiable.
+
+Nuance honnête et importante : cette statusline s'affiche pour TOI, dans ton terminal. Elle n'est pas réinjectée dans le contexte de l'agent. Autrement dit, l'agent ne voit pas sa propre jauge. Conséquence pratique : il arrête d'inventer des chiffres, et la décision de changer de session ne se prend pas sur son estimation. Elle se prend sur deux choses concrètes : une FIN DE PHASE (une étape finie, une feature mergée) plus la jauge que TU vois. Dans le doute, l'agent te renvoie vers ta statusline au lieu de sortir un pourcentage de son chapeau.
+
+Le seuil zone rouge reste le repère : ne pas démarrer une grosse tâche quand la jauge est haute, compacter en fin de phase.
+
 ## Les 4 gestes de gestion de session
 
 **1. `/clear` : nouvelle tâche, nouvelle session.** Le geste par défaut. Une session = une tâche. Repartir propre coûte 30 secondes de re-cadrage et rend des heures de lucidité.

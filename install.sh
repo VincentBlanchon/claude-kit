@@ -63,7 +63,7 @@ copy_tree() {
 }
 
 say "claude-kit : installation vers ${DEST/#$HOME/~} $($DRY_RUN && echo '(DRY RUN, rien ne sera ecrit)')"
-$DRY_RUN || mkdir -p "$DEST" "$DEST/rules" "$DEST/skills" "$DEST/agents" "$DEST/hooks" "$DEST/patterns"
+$DRY_RUN || mkdir -p "$DEST" "$DEST/rules" "$DEST/skills" "$DEST/agents" "$DEST/hooks" "$DEST/commands" "$DEST/patterns"
 
 say "1. Config globale"
 copy_file "$KIT_DIR/config/CLAUDE.md" "$DEST/CLAUDE.md"
@@ -81,6 +81,9 @@ copy_tree "$KIT_DIR/agents" "$DEST/agents"
 say "5. Hooks"
 copy_tree "$KIT_DIR/hooks" "$DEST/hooks"
 $DRY_RUN || chmod +x "$DEST/hooks/"*.sh 2>/dev/null || true
+
+say "6. Commands (slash commands)"
+copy_tree "$KIT_DIR/commands" "$DEST/commands"
 
 # Marqueur pour le rappel "config en retard sur le repo" (hooks/rappels.sh)
 if [ "$DRY_RUN" = false ]; then

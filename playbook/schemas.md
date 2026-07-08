@@ -1,6 +1,12 @@
 # Sous le capot : le système en schémas
 
-Neuf schémas qui montrent PRÉCISÉMENT ce qui se passe à chaque moment : ce qui se charge, ce qui bloque, ce qui vérifie, ce qui apprend. À lire avec le [playbook](README.md) ; chaque schéma renvoie au chapitre qui l'explique.
+Une carte d'ensemble d'abord, puis neuf schémas qui montrent PRÉCISÉMENT ce qui se passe à chaque moment : ce qui se charge, ce qui bloque, ce qui vérifie, ce qui apprend. À lire avec le [playbook](README.md) ; chaque schéma renvoie au chapitre qui l'explique.
+
+## Vue d'ensemble : la carte du système
+
+![Carte du système : du repo à la config active, et les six briques qui la composent](../assets/carte-systeme.svg)
+
+Le repo s'installe dans `~/.claude` via `./install.sh`, qui déploie six briques chargées à chaque session. Les hooks empêchent (automatique, déterministe), le CLAUDE.md guide (règles à suivre). Les neuf schémas ci-dessous détaillent chaque moment.
 
 ## 1. Ce qui se charge à l'ouverture d'une session
 
