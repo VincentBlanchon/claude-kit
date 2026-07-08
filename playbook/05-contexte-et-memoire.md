@@ -15,9 +15,11 @@ Symptômes : réponses plus vagues, oublis de règles pourtant écrites, retours
 
 Un piège discret mais coûteux : l'agent a tendance à estimer son remplissage « au jugé ». Il annonce « on est à 40 % » sans l'avoir mesuré. Il se trompe presque toujours. Deux dégâts opposés : soit il sur-estime et te fait couper une session encore fraîche, soit il sous-estime et laisse la session pourrir bien après la zone rouge.
 
-La règle : **ne jamais annoncer un pourcentage de contexte qu'on n'a pas lu sur la jauge.** La vraie jauge, c'est la statusline. Elle est alimentée par la donnée réelle que fournit Claude Code (`context_window.used_percentage`), affichée en continu par un hook (`statusline.sh` dans ce kit). C'est le seul chiffre fiable.
+La règle : **ne jamais annoncer un pourcentage de contexte qu'on n'a pas mesuré.** Et l'agent PEUT le mesurer, tout seul. Deux sources fiables du même chiffre réel (`context_window.used_percentage`, fourni par Claude Code) :
+1. **La statusline** (`statusline.sh`), affichée en continu dans TON terminal : ta jauge à toi, comme une jauge d'essence.
+2. **Le script `hooks/context-usage.sh`**, que l'agent lance quand la question se pose : il lit le dernier `usage` du transcript de session (tokens réellement en contexte) et sort le chiffre, sans recharger le transcript. C'est ce qui rend l'agent autonome sur sa propre jauge.
 
-Nuance honnête et importante : cette statusline s'affiche pour TOI, dans ton terminal. Elle n'est pas réinjectée dans le contexte de l'agent. Autrement dit, l'agent ne voit pas sa propre jauge. Conséquence pratique : il arrête d'inventer des chiffres, et la décision de changer de session ne se prend pas sur son estimation. Elle se prend sur deux choses concrètes : une FIN DE PHASE (une étape finie, une feature mergée) plus la jauge que TU vois. Dans le doute, l'agent te renvoie vers ta statusline au lieu de sortir un pourcentage de son chapeau.
+Nuance à comprendre : la statusline s'affiche pour toi, elle n'est pas réinjectée dans le contexte de l'agent (il ne « voit » pas la barre en direct). C'est justement pour ça que le script existe : au lieu de deviner ou de te renvoyer la question, l'agent lance `context-usage.sh` et lit le vrai nombre. Il mesure, il n'invente plus. La décision de changer de session se prend alors sur du concret : une FIN DE PHASE (une étape finie, une feature mergée) plus le chiffre mesuré.
 
 Le seuil zone rouge reste le repère : ne pas démarrer une grosse tâche quand la jauge est haute, compacter en fin de phase.
 
