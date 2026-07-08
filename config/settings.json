@@ -1,4 +1,9 @@
 {
+  "effortLevel": "high",
+  "statusLine": {
+    "type": "command",
+    "command": "bash $HOME/.claude/hooks/statusline.sh"
+  },
   "permissions": {
     "deny": [
       "Read(**/.env)",
@@ -24,6 +29,10 @@
           },
           {
             "type": "command",
+            "command": "bash $HOME/.claude/hooks/branch-guard.sh"
+          },
+          {
+            "type": "command",
             "command": "bash $HOME/.claude/hooks/rappels.sh"
           }
         ]
@@ -40,6 +49,15 @@
           {
             "type": "command",
             "command": "bash $HOME/.claude/hooks/block-dangerous-actions.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__Claude_Preview__preview_(start|screenshot|snapshot|click|fill|eval|resize)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash $HOME/.claude/hooks/block-preview-panel.sh"
           }
         ]
       }

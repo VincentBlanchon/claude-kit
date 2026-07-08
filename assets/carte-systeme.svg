@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 600" font-family="'DM Sans', system-ui, -apple-system, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9" fill="none" stroke="#b85436" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="920" height="600" fill="#f2ead8"/>
+
+  <!-- header -->
+  <text x="40" y="46" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="13" letter-spacing="2" fill="#b85436">CLAUDE-KIT · LA CARTE DU SYSTÈME</text>
+  <text x="40" y="70" font-size="14.5" fill="#857461">Du repo à la config active, et les six briques qui la composent.</text>
+
+  <!-- flow: source -> install -> active -->
+  <g>
+    <rect x="235" y="96" width="180" height="54" rx="8" fill="#f7f1e3" stroke="#d7c9a8" stroke-width="1.5"/>
+    <text x="325" y="122" text-anchor="middle" font-size="15.5" font-weight="700" fill="#1a1812">claude-kit</text>
+    <text x="325" y="140" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="10" fill="#857461">le repo public</text>
+
+    <line x1="418" y1="123" x2="472" y2="123" stroke="#b85436" stroke-width="1.6" marker-end="url(#arrow)"/>
+    <text x="445" y="113" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="10" fill="#b85436">./install.sh</text>
+
+    <rect x="475" y="96" width="210" height="54" rx="8" fill="#f7f1e3" stroke="#3f5a2a" stroke-width="2"/>
+    <text x="580" y="122" text-anchor="middle" font-size="15.5" font-weight="700" fill="#1a1812">~/.claude</text>
+    <text x="580" y="140" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="10" fill="#857461">config chargée à chaque session</text>
+  </g>
+
+  <!-- connector to container -->
+  <path d="M580,150 L580,186 L460,186 L460,214" fill="none" stroke="#3f5a2a" stroke-width="1.4" marker-end="url(#arrow)"/>
+
+  <!-- container of the 6 bricks -->
+  <rect x="28" y="216" width="864" height="300" rx="10" fill="none" stroke="#d7c9a8" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <text x="44" y="238" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="10.5" letter-spacing="1" fill="#857461">LES 6 BRIQUES DÉPLOYÉES DANS ~/.claude</text>
+
+  <!-- 6 cards -->
+  <!-- row 1 -->
+  <g>
+    <rect x="44" y="256" width="268" height="110" rx="8" fill="#f7f1e3" stroke="#d7c9a8" stroke-width="1.3"/>
+    <text x="62" y="282" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="9.5" letter-spacing="1" fill="#b85436">RÈGLES VIVANTES</text>
+    <text x="62" y="305" font-size="16" font-weight="700" fill="#1a1812">CLAUDE.md</text>
+    <text x="62" y="328" font-size="12.5" fill="#857461">Le comportement de base, chargé à</text>
+    <text x="62" y="345" font-size="12.5" fill="#857461">chaque session. Ce que l'agent suit.</text>
+  </g>
+  <g>
+    <rect x="326" y="256" width="268" height="110" rx="8" fill="#f7f1e3" stroke="#d7c9a8" stroke-width="1.3"/>
+    <text x="344" y="282" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="9.5" letter-spacing="1" fill="#b85436">MODES DE TRAVAIL</text>
+    <text x="344" y="305" font-size="16" font-weight="700" fill="#1a1812">Skills</text>
+    <text x="344" y="328" font-size="12.5" fill="#857461">Démarrer un projet, réfléchir,</text>
+    <text x="344" y="345" font-size="12.5" fill="#857461">concevoir l'UI, décider en visuel.</text>
+  </g>
+  <g>
+    <rect x="608" y="256" width="268" height="110" rx="8" fill="#f7f1e3" stroke="#3f5a2a" stroke-width="1.6"/>
+    <text x="626" y="282" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="9.5" letter-spacing="1" fill="#3f5a2a">AUTOMATIQUE</text>
+    <text x="626" y="305" font-size="16" font-weight="700" fill="#1a1812">Hooks (12)</text>
+    <text x="626" y="328" font-size="12.5" fill="#857461">Les garde-fous. Ils EMPÊCHENT,</text>
+    <text x="626" y="345" font-size="12.5" fill="#857461">là où les règles ne font que demander.</text>
+  </g>
+  <!-- row 2 -->
+  <g>
+    <rect x="44" y="386" width="268" height="110" rx="8" fill="#f7f1e3" stroke="#d7c9a8" stroke-width="1.3"/>
+    <text x="62" y="412" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="9.5" letter-spacing="1" fill="#b85436">LECTURE SEULE</text>
+    <text x="62" y="435" font-size="16" font-weight="700" fill="#1a1812">Agents (6)</text>
+    <text x="62" y="458" font-size="12.5" fill="#857461">Des spécialistes. Gros modèle pour le</text>
+    <text x="62" y="475" font-size="12.5" fill="#857461">jugement, léger pour l'exécution.</text>
+  </g>
+  <g>
+    <rect x="326" y="386" width="268" height="110" rx="8" fill="#f7f1e3" stroke="#d7c9a8" stroke-width="1.3"/>
+    <text x="344" y="412" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="9.5" letter-spacing="1" fill="#b85436">PAR TYPE DE FICHIER</text>
+    <text x="344" y="435" font-size="16" font-weight="700" fill="#1a1812">Rules</text>
+    <text x="344" y="458" font-size="12.5" fill="#857461">Règles ciblées qui s'activent selon</text>
+    <text x="344" y="475" font-size="12.5" fill="#857461">le fichier (qualité, sécurité, front).</text>
+  </g>
+  <g>
+    <rect x="608" y="386" width="268" height="110" rx="8" fill="#f7f1e3" stroke="#d7c9a8" stroke-width="1.3"/>
+    <text x="626" y="412" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="9.5" letter-spacing="1" fill="#b85436">CÂBLAGE</text>
+    <text x="626" y="435" font-size="16" font-weight="700" fill="#1a1812">Settings + Commands</text>
+    <text x="626" y="458" font-size="12.5" fill="#857461">Permissions, effort, jauge de contexte.</text>
+    <text x="626" y="475" font-size="12.5" fill="#857461">Plus les rituels comme /close-branch.</text>
+  </g>
+
+  <!-- legend -->
+  <text x="460" y="556" text-anchor="middle" font-size="13" fill="#1a1812">Les <tspan font-weight="700">hooks</tspan> font que l'agent ne PEUT pas déraper. Le <tspan font-weight="700">CLAUDE.md</tspan> lui dit quoi faire. L'un empêche, l'autre guide.</text>
+</svg>

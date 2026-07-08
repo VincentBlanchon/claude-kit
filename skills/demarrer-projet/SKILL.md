@@ -1,6 +1,6 @@
 ---
 name: demarrer-projet
-description: Initialise un nouveau projet proprement — cadrage du besoin, choix de stack argumenté, CLAUDE.md projet, git, structure de départ. À utiliser quand l'utilisateur dit « nouveau projet », « on démarre », « init projet », ou quand le dossier courant est vierge (ni CLAUDE.md ni .git). Aussi : /demarrer-projet.
+description: "Initialise un nouveau projet proprement : cadrage du besoin, choix de stack argumenté, CLAUDE.md projet, git, structure de départ. À utiliser quand l'utilisateur dit « nouveau projet », « on démarre », « init projet », ou quand le dossier courant est vierge (ni CLAUDE.md ni .git). Aussi : /demarrer-projet."
 ---
 
 # /demarrer-projet : initialisation guidée

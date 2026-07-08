@@ -1,6 +1,6 @@
 ---
 name: patterns
-description: Bibliothèque de patterns / décisions / conventions RÉUTILISABLES, partagée entre TOUS les projets de l'utilisateur. Comble le trou de la mémoire native (qui est par-projet ET par-machine). Charger au début d'un projet, ou quand l'utilisateur dit « mes patterns », « comme d'habitude », « mes conventions ». Sauver quand une décision réutilisable émerge. Aussi : /patterns.
+description: "Bibliothèque de patterns / décisions / conventions RÉUTILISABLES, partagée entre TOUS les projets de l'utilisateur. Comble le trou de la mémoire native (qui est par-projet ET par-machine). Charger au début d'un projet, ou quand l'utilisateur dit « mes patterns », « comme d'habitude », « mes conventions ». Sauver quand une décision réutilisable émerge. Aussi : /patterns."
 ---
 
 # /patterns — Mémoire transversale entre projets

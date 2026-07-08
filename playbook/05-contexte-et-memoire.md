@@ -11,6 +11,18 @@ Symptômes : réponses plus vagues, oublis de règles pourtant écrites, retours
 
 **La règle opérationnelle chiffrée** (recoupée par les power users et la doc officielle) : vers **40 % de contexte utilisé**, tu entres en zone rouge. Aucune tâche lourde ne DÉMARRE au-delà de ce seuil : on clôture proprement et on repart frais. La statusline de Claude Code affiche ce pourcentage : regarde-le comme une jauge d'essence.
 
+## Le pourcentage se lit, il ne s'invente pas
+
+Un piège discret mais coûteux : l'agent a tendance à estimer son remplissage « au jugé ». Il annonce « on est à 40 % » sans l'avoir mesuré. Il se trompe presque toujours. Deux dégâts opposés : soit il sur-estime et te fait couper une session encore fraîche, soit il sous-estime et laisse la session pourrir bien après la zone rouge.
+
+La règle : **ne jamais annoncer un pourcentage de contexte qu'on n'a pas mesuré.** Et l'agent PEUT le mesurer, tout seul. Deux sources fiables du même chiffre réel (`context_window.used_percentage`, fourni par Claude Code) :
+1. **La statusline** (`statusline.sh`), affichée en continu dans TON terminal : ta jauge à toi, comme une jauge d'essence.
+2. **Le script `hooks/context-usage.sh`**, que l'agent lance quand la question se pose : il lit le dernier `usage` du transcript de session (tokens réellement en contexte) et sort le chiffre, sans recharger le transcript. C'est ce qui rend l'agent autonome sur sa propre jauge.
+
+Nuance à comprendre : la statusline s'affiche pour toi, elle n'est pas réinjectée dans le contexte de l'agent (il ne « voit » pas la barre en direct). C'est justement pour ça que le script existe : au lieu de deviner ou de te renvoyer la question, l'agent lance `context-usage.sh` et lit le vrai nombre. Il mesure, il n'invente plus. La décision de changer de session se prend alors sur du concret : une FIN DE PHASE (une étape finie, une feature mergée) plus le chiffre mesuré.
+
+Le seuil zone rouge reste le repère : ne pas démarrer une grosse tâche quand la jauge est haute, compacter en fin de phase.
+
 ## Les 4 gestes de gestion de session
 
 **1. `/clear` : nouvelle tâche, nouvelle session.** Le geste par défaut. Une session = une tâche. Repartir propre coûte 30 secondes de re-cadrage et rend des heures de lucidité.
