@@ -1,17 +1,19 @@
 # claude-kit
 
-Une configuration complète et une méthode de travail pour Claude Code, prêtes à installer.
+**Pas besoin d'être développeur pour produire du bon logiciel avec un agent. Il faut une méthode. Ce kit est cette méthode, plus la configuration qui la fait respecter automatiquement.**
 
-Ce repo condense plusieurs années de pratique intensive des agents IA : comment les piloter, comment obtenir du code fiable sans lire chaque ligne, comment éviter les pièges classiques (contexte qui pourrit, vérifications bâclées, interfaces génériques, budgets tokens explosés). Tout est en français, tout est actionnable.
+Une config Claude Code complète et un playbook, prêts à installer. Ce repo condense plusieurs années de pratique intensive des agents IA : comment les piloter, obtenir du code fiable sans lire chaque ligne, et éviter les pièges classiques (contexte qui pourrit, vérifications bâclées, interfaces génériques, budgets tokens explosés). Tout est en français, tout est actionnable.
 
-## À qui ça s'adresse
+![Carte du système : du repo à la config active, et les six briques qui la composent](assets/carte-systeme.svg)
 
-- **Débutant total** (stagiaire, ami qui découvre) : suis [GUIDE-DEMARRAGE.md](GUIDE-DEMARRAGE.md), installe, et tu pars avec des rails solides au lieu d'une page blanche.
-- **Utilisateur déjà actif** : pioche dans le [playbook](playbook/README.md), les [hooks](hooks/) et les [agents](agents/) ce qui manque à ta config.
+## Pour qui
 
-Le principe central : **tu n'as pas besoin d'être développeur pour produire du bon logiciel avec un agent. Tu as besoin d'une méthode.** Ce kit est cette méthode, plus la config qui la fait respecter automatiquement.
+- **Débutant total** (tu découvres Claude Code) : tu pars avec des rails solides au lieu d'une page blanche.
+- **Utilisateur déjà actif** : tu piocheras les hooks, agents et chapitres qui manquent à ta config.
 
-## Installation
+## Démarre en 3 minutes
+
+Clone le repo et lance l'installeur :
 
 ```bash
 git clone https://github.com/VincentBlanchon/claude-kit.git
@@ -21,9 +23,44 @@ cd claude-kit
 
 L'installation est **non-destructive** : elle n'écrase jamais un fichier existant (elle le signale et te laisse décider). Options : `./install.sh --dry-run` pour voir ce qui serait fait, `./install.sh --force` pour tout écraser en connaissance de cause.
 
-## Ce qu'il y a dedans
+Ensuite, ton tout premier geste :
 
-![Carte du système : du repo à la config active, et les six briques qui la composent](assets/carte-systeme.svg)
+```bash
+claude
+```
+
+Puis lis [GUIDE-DEMARRAGE.md](GUIDE-DEMARRAGE.md). Il te fait passer de zéro (installer Claude Code, comprendre les trois étages du kit, lancer ton premier projet) à autonome, en 20 minutes.
+
+## Le système en un regard
+
+Trois schémas suffisent à voir comment tout tient ensemble.
+
+![Le cycle d'une session : ouverture, travail, surveillance, clôture, puis session fraîche](assets/cycle-session.svg)
+
+*Une session, de l'ouverture (hooks de démarrage, jauge de contexte) à la clôture propre avec `/close-branch`, puis on repart frais. Une phase à la fois, un plan verrouillé avant de construire, une preuve avant de dire que c'est fait.*
+
+![Le pipeline de modèles : trois gammes selon la charge, et deux curseurs quand un résultat rate](assets/pipeline-modeles.svg)
+
+*Trois gammes de modèles selon la charge (léger pour le borné, équilibré au quotidien, gros pour le jugement), avec l'effort réglé haut par défaut. Quand un résultat rate : "pas su" fait monter le modèle, "pas essayé" fait monter l'effort.*
+
+Les [9 schémas détaillés](playbook/schemas.md) montrent ensuite chaque moment précis : ce qui se charge à l'ouverture, ce qu'un hook bloque, comment la preuve est exigée, comment une correction devient un pattern permanent.
+
+## Parcours guidé : de zéro à autonome
+
+Un chemin à suivre dans l'ordre. Chaque étape prépare la suivante.
+
+1. **Lis [GUIDE-DEMARRAGE.md](GUIDE-DEMARRAGE.md).** Le point d'entrée : installer, comprendre les trois étages, ton premier projet.
+2. **Installe le kit** (voir plus haut), puis relance `./install.sh` après chaque `git pull`.
+3. **Comprends ton rôle** avec [01 - La philosophie du builder](playbook/01-philosophie-builder.md) : ce que tu décides, cadres et vérifies quand c'est l'agent qui écrit le code.
+4. **Soigne ton `CLAUDE.md`** avec [02 - L'art du CLAUDE.md](playbook/02-claude-md.md) : le fichier le plus rentable de ton setup.
+5. **Adopte le workflow feature** avec [03](playbook/03-workflow-feature.md) et [04](playbook/04-verification.md) : comprendre, planifier, verrouiller, construire, prouver, livrer.
+6. **Garde l'agent lucide** avec [05 - Contexte et mémoire](playbook/05-contexte-et-memoire.md) : pourquoi les sessions se dégradent et quoi faire à chaque seuil.
+7. **Muscle ta config** avec [06 - Skills, agents, MCP](playbook/06-skills-agents-mcp.md) et [07 - Hooks et sécurité](playbook/07-hooks-et-securite.md) : l'enforcement qui ne dépend plus de la bonne volonté.
+8. **Finis proprement** avec [08 - La discipline git](playbook/08-git-discipline.md), [09 - Du front sans slop](playbook/09-front-sans-slop.md) et [10 - Modèles et coûts](playbook/10-modeles-et-couts.md).
+
+À la fin de ce parcours, tu pilotes un agent sans lire son code, en sachant exactement quand lui faire confiance et quand exiger une preuve.
+
+## Ce qu'il y a dedans
 
 | Dossier | Contenu | Installé vers |
 |---|---|---|
@@ -42,8 +79,6 @@ L'installation est **non-destructive** : elle n'écrase jamais un fichier exista
 4. **L'enforcement bat la consigne.** Une règle écrite dans un fichier peut être oubliée sous pression ; un hook ou une permission `deny` ne peut pas. Ce kit installe les deux.
 5. **Le système compte plus que le modèle.** Une bonne config, des règles courtes, une mémoire bien tenue et des vérifications systématiques produisent plus que n'importe quel changement de modèle.
 
-Le détail, les sources et les cas limites sont dans le [playbook](playbook/README.md).
-
 ## Structure après installation
 
 ```
@@ -57,8 +92,14 @@ Le détail, les sources et les cas limites sont dans le [playbook](playbook/READ
 └── patterns/          ← tes conventions personnelles (vide au départ, à toi de le remplir)
 ```
 
+## Pour aller plus loin
+
+Tout le détail, les sources et les cas limites vivent dans le [playbook](playbook/README.md). Commence par le [guide de démarrage](GUIDE-DEMARRAGE.md), puis suis les chapitres dans l'ordre.
+
 ## Maintenu par
 
 Vincent Blanchon. Ce kit est la version partageable de ma configuration personnelle : tout ce qui est ici est générique et testé en conditions réelles sur une quinzaine de projets (produits web, pipelines de données, automatisations, apps mobiles).
 
 Licence [MIT](LICENSE) : sers-toi, adapte, partage.
+</content>
+</invoke>
