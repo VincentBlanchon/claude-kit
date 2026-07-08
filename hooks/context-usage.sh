@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# context-usage.sh — lit le VRAI remplissage de contexte de la session courante.
+# context-usage.sh : lit le VRAI remplissage de contexte de la session courante.
 #
 # But : rendre l'agent AUTONOME sur sa jauge de contexte. Au lieu de deviner
 # ("on est a ~40%"), il lance `bash $HOME/.claude/hooks/context-usage.sh` et lit
@@ -34,4 +34,4 @@ if [ "$win" = "auto" ]; then
   if [ "$ctx" -gt 200000 ]; then win=1000000; else win=200000; fi
 fi
 pct=$(( ctx * 100 / win ))
-echo "contexte reel : ${ctx} tokens, ~${pct}% d'une fenetre $(( win / 1000 ))k$([ "$pct" -ge 40 ] && echo ' — zone rouge')"
+echo "contexte reel : ${ctx} tokens, ~${pct}% d'une fenetre $(( win / 1000 ))k$([ "$pct" -ge 40 ] && echo ' (zone rouge)')"
